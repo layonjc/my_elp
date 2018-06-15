@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "restaurants#index"
   # Routes for the Reminder resource:
   # CREATE
   get "/reminders/new", :controller => "reminders", :action => "new"
