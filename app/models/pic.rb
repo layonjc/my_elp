@@ -1,6 +1,8 @@
 class Pic < ApplicationRecord
   # Direct associations
 
+  belongs_to :restaurant
+
   belongs_to :user
 
   # Indirect associations
