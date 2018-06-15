@@ -24,8 +24,11 @@
         <td><%= pic.restaurant.created_at %></td>
         <td>
           <a href="/pics/<%= pic.id %>" class="btn btn-primary">Show</a>
-          <a href="/pics/<%= pic.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_pic/<%= pic.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == pic.user %>
+            <a href="/pics/<%= pic.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_pic/<%= pic.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
