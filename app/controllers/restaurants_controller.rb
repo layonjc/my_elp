@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :current_user_must_be_restaurant_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_restaurant_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_restaurant_user
     restaurant = Restaurant.find(params[:id])
