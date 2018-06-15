@@ -20,8 +20,20 @@
       <tr>
         <td><%= pic.caption %></td>
         <td><%= pic.image %></td>
-        <td><%= pic.user.email %></td>
-        <td><%= pic.restaurant.created_at %></td>
+        <td>
+          <% if pic.user.present? %>
+            <a href="/users/<%= pic.user.id %>">
+              <%= pic.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if pic.restaurant.present? %>
+            <a href="/restaurants/<%= pic.restaurant.id %>">
+              <%= pic.restaurant.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/pics/<%= pic.id %>" class="btn btn-primary">Show</a>
           

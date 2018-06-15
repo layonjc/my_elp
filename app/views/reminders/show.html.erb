@@ -9,10 +9,22 @@
       <dd><%= @reminder.description %></dd>
 
       <dt>User</dt>
-      <dd><%= @reminder.user_id %></dd>
+      <dd>
+        <% if @reminder.user.present? %>
+          <a href="/users/<%= @reminder.user_id %>">
+            <%= @reminder.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Restaurant</dt>
-      <dd><%= @reminder.restaurant_id %></dd>
+      <dd>
+        <% if @reminder.restaurant.present? %>
+          <a href="/restaurants/<%= @reminder.restaurant_id %>">
+            <%= @reminder.restaurant.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

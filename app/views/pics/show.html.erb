@@ -12,10 +12,22 @@
       <dd><%= @pic.image %></dd>
 
       <dt>User</dt>
-      <dd><%= @pic.user_id %></dd>
+      <dd>
+        <% if @pic.user.present? %>
+          <a href="/users/<%= @pic.user_id %>">
+            <%= @pic.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Restaurant</dt>
-      <dd><%= @pic.restaurant_id %></dd>
+      <dd>
+        <% if @pic.restaurant.present? %>
+          <a href="/restaurants/<%= @pic.restaurant_id %>">
+            <%= @pic.restaurant.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
