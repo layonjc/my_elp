@@ -20,3 +20,96 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many pics -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Pics
+      </li>
+
+      <% @user.pics.each do |pic| %>
+        <li class="list-group-item">
+          <a href="/pics/<%= pic.id %>">
+            <%= pic.caption %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/pics/<%= pic.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/pics/<%= pic.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_pic/<%= pic.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many restaurants -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurants
+      </li>
+
+      <% @user.restaurants.each do |restaurant| %>
+        <li class="list-group-item">
+          <a href="/restaurants/<%= restaurant.id %>">
+            <%= restaurant.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/restaurants/<%= restaurant.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_restaurant/<%= restaurant.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many reminders -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reminders
+      </li>
+
+      <% @user.reminders.each do |reminder| %>
+        <li class="list-group-item">
+          <a href="/reminders/<%= reminder.id %>">
+            <%= reminder.description %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/reminders/<%= reminder.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/reminders/<%= reminder.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_reminder/<%= reminder.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
