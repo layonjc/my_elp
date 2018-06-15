@@ -16,6 +16,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @reminder = Reminder.new
+    @pic = Pic.new
     @restaurant = Restaurant.find(params[:id])
 
     render("restaurants/show.html.erb")
