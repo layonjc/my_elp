@@ -19,7 +19,7 @@
       <tr>
         <td><%= reminder.description %></td>
         <td><%= reminder.user.email %></td>
-        <td><%= reminder.restaurant_id %></td>
+        <td><%= reminder.restaurant.created_at %></td>
         <td>
           <a href="/reminders/<%= reminder.id %>" class="btn btn-primary">Show</a>
           <a href="/reminders/<%= reminder.id %>/edit" class="btn btn-warning">Edit</a>
