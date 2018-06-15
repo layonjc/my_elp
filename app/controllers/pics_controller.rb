@@ -10,7 +10,7 @@ class PicsController < ApplicationController
   end
 
   def index
-    @pics = Pic.all
+    @pics = current_user.pics.page(params[:page]).per(10)
 
     render("pics/index.html.erb")
   end
