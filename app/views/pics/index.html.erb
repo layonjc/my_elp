@@ -21,7 +21,7 @@
         <td><%= pic.caption %></td>
         <td><%= pic.image %></td>
         <td><%= pic.user.email %></td>
-        <td><%= pic.restaurant_id %></td>
+        <td><%= pic.restaurant.created_at %></td>
         <td>
           <a href="/pics/<%= pic.id %>" class="btn btn-primary">Show</a>
           <a href="/pics/<%= pic.id %>/edit" class="btn btn-warning">Edit</a>
